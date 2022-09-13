@@ -30,13 +30,13 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
       <th>Nome</th>
       <th>Foto</th>
       <th>Função</th>
-      <th>GitHub</th>
+      <th>Contato</th>
     </thead>
     <tbody>
      <tr>
      <td> Thiago Canedo
        <td>
-         <img src=>
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/TCanedo.jpg" width="50px">
        </td>
        <td>Project Owner</td>
        <td><a href="https://github.com/ThiagoCanedo">Github</a></td>
@@ -44,22 +44,24 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
       <tr>
      <td> Thiago Silva
        <td>
-         <img src=>
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/TSilva.jpg" width="50px">
        </td>
        <td>Scrum Master</td>
-       <td><a href="https://github.com/thiagosilva89">Github</a></td>
+       <td><a href="https://github.com/thiagosilva89">Github</a>
+        <p> <a href="https://www.linkedin.com/in/thiago-c-silva-49bb74168">Linkedin</a> </p>
+        </td>
       </tr>
       <tr>
      <td> Pedro Cardoso
        <td>
-         <img src=>
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Pedro.jpg" width="50px">
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/phscz">Github</a></td>
       </tr>
       <td> Vitor Morais
        <td>
-         <img src=>
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Vitor.jpg" width="50px">
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/vmorais111">Github</a>
@@ -68,7 +70,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
       </tr>
   <td> Leonardo Gazola
        <td>
-         <img src=>
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Leo.jpg" width="50px">
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/Leonardo-Gazola-Medeiros">Github</a></td>
@@ -78,14 +80,16 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
          <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/eu....jpg" width="50px">
        </td>
        <td>Desenvolvedor</td>
-       <td><a href="https://github.com/LuisSCardoso">Github</a></td>
+       <td><a href="https://github.com/LuisSCardoso">Github</a>
+          <p> <a href="https://www.linkedin.com/in/lu%C3%ADs-ant%C3%B4nio-souza-cardoso-3928b51a0/">Linkedin</a> </p>
+        </td>
       </tr>
       <td> Flávio Borges
        <td>
-         <img src=>
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Flavio.jpg" width="50px">
        </td>
        <td>Desenvolvedor</td>
-       <td><a href="">Github</a></td>
+       <td><a href="https://github.com/Flavioborges86">Github</a></td>
       </tr>
 </div>
        
