@@ -30,8 +30,61 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
       <th>Nome</th>
       <th>Foto</th>
       <th>Função</th>
-      <th>LinkedInb</th>
+      <th>GitHub</th>
     </thead>
     <tbody>
      <tr>
      <td> Thiago Canedo
+       <td>
+         <img src=>
+       </td>
+       <td>Project Owner</td>
+       <td><a href="https://github.com/ThiagoCanedo">Github</a></td>
+      </tr>
+      <tr>
+     <td> Thiago Silva
+       <td>
+         <img src=>
+       </td>
+       <td>Scrum Master</td>
+       <td><a href="https://github.com/thiagosilva89">Github</a></td>
+      </tr>
+      <tr>
+     <td> Pedro Cardoso
+       <td>
+         <img src=>
+       </td>
+       <td>Desenvolvedor</td>
+       <td><a href="https://github.com/phscz">Github</a></td>
+      </tr>
+      <td> Vitor Morais
+       <td>
+         <img src=>
+       </td>
+       <td>Desenvolvedor</td>
+       <td><a href="https://github.com/vmorais111">Github</a></td>
+      </tr>
+  <td> Leonardo Gazola
+       <td>
+         <img src=>
+       </td>
+       <td>Desenvolvedor</td>
+       <td><a href="https://github.com/Leonardo-Gazola-Medeiros">Github</a></td>
+      </tr>
+      <td> Luis S.Cardoso
+       <td>
+         <img src=>
+       </td>
+       <td>Desenvolvedor</td>
+       <td><a href="https://github.com/LuisSCardoso">Github</a></td>
+      </tr>
+      <td> Flávio Borges
+       <td>
+         <img src=>
+       </td>
+       <td>Desenvolvedor</td>
+       <td><a href="">Github</a></td>
+      </tr>
+</div>
+       
+
