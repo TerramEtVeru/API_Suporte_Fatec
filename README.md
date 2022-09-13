@@ -62,7 +62,9 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
          <img src=>
        </td>
        <td>Desenvolvedor</td>
-       <td><a href="https://github.com/vmorais111">Github</a></td>
+       <td><a href="https://github.com/vmorais111">Github</a>
+         <p> <a href="https://www.linkedin.com/in/vitor-faria-morais-330b19204/">Linkedin</a> </p>
+      </td>
       </tr>
   <td> Leonardo Gazola
        <td>
@@ -73,7 +75,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
       </tr>
       <td> Luis S.Cardoso
        <td>
-         <img src=>
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/eu....jpg" width="50px">
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/LuisSCardoso">Github</a></td>
