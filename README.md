@@ -5,9 +5,13 @@
 
 <hr>
 
-<a href ="-o-projeto"> Projeto </a>  •
+<a href ="#o-projeto"> Projeto </a>  •
+<a href ="#a-equipe"> Equipe </a>  •
+<a href ="#cronograma"> Cronograma </a>  •  
+<a href ="#backlog"> Backlog </a>  •
 
-<hr>
+  
+  <hr>
 
 </div>
 
@@ -31,6 +35,15 @@ Apresentação via Github.
 
 O sistema web deverá ser intuitivo e não ter poluições de informações, isso deverá ser uma preocupação constante dos desenvolvedores sugestões de controles serão bem-vindas e bem avaliadas. 
 <hr>
+  
+## Cronograma
+  
+  <img scr="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Cronograma API 2022-2.jpeg">  
+  
+    
+## Backlog
+  
+<hr>  
 </div>
 
 <div align="center">
@@ -39,6 +52,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
 </div>
 <hr>
 
+## A Equipe
 <div>
 <h2> Equipe de Desenvolvedores</h2>
   <table align="left">
