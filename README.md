@@ -1,7 +1,17 @@
 ## Aprendizagem por Projeto Integrado
 
-<h3 align="center">Projeto promovido pelo Instituto Paula Souza e desenvolvido por:</h3>
+<div>
+<h3 align="center">Projeto desenvolvido por:</h3>
 
+<hr>
+
+<a href ="-o-projeto"> Projeto </a>  •
+
+<hr>
+
+</div>
+
+## O Projeto
 <div>
 <h3> Tema do Semestre </h2>
 <p> Aplicação Web – Suporte e Ordem de Serviço de Laboratório de informática da Fatec de São José </p>
@@ -22,6 +32,12 @@ Apresentação via Github.
 O sistema web deverá ser intuitivo e não ter poluições de informações, isso deverá ser uma preocupação constante dos desenvolvedores sugestões de controles serão bem-vindas e bem avaliadas. 
 <hr>
 </div>
+
+<div align="center">
+  <h3> Projeto promovido pelo Instituto Paula Souza: <h3>
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/cps_brasao.png">
+</div>
+<hr>
 
 <div>
 <h2> Equipe de Desenvolvedores</h2>
@@ -92,5 +108,3 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
        <td><a href="https://github.com/Flavioborges86">Github</a></td>
       </tr>
 </div>
-       
-
