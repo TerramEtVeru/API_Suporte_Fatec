@@ -46,12 +46,6 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
 <hr>  
 </div>
 
-<div align="center">
-  <h3> Projeto promovido pelo Instituto Paula Souza: <h3>
-  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/cps_brasao.png">
-</div>
-<hr>
-
 ## A Equipe
 <div>
 <h2> Equipe de Desenvolvedores</h2>
