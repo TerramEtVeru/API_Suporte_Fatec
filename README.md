@@ -4,12 +4,14 @@
 <h3 align="center">Projeto desenvolvido por:</h3>
 
 <hr>
-
-<a href ="#o-projeto"> Projeto </a>  •
-<a href ="#a-equipe"> Equipe </a>  •
-<a href ="#cronograma"> Cronograma </a>  •  
-<a href ="#backlog"> Backlog </a>  •
-
+  <div align="center">
+    <h3>
+    <a href ="#o-projeto"> Projeto </a>  •
+    <a href ="#a-equipe"> Equipe </a>  •
+    <a href ="#cronograma"> Cronograma </a>  •  
+    <a href ="#backlog"> Backlog </a>  •
+    </h3>
+  </div>
   
   <hr>
 
@@ -38,10 +40,17 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
   
 ## Cronograma
   
-  <img scr="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Cronograma API 2022-2.jpeg">  
-  
+<div>
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/CronogramaAPI2022-2.jpeg" width="500" height="600">  
+</div>
     
+<hr>
+
 ## Backlog
+
+<div>
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Backlog.jpg" width="500" height="600">  
+</div>
   
 <hr>  
 </div>
