@@ -1,7 +1,9 @@
 ## Aprendizagem por Projeto Integrado
 
-<div>
+<div align="center">
 <h3 align="center">Projeto desenvolvido por:</h3>
+
+<img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/TerramEtVeru_logo.png">
 
 <hr>
   <div align="center">
