@@ -12,6 +12,7 @@
     <a href ="#a-equipe"> Equipe </a>  •
     <a href ="#cronograma"> Cronograma </a>  •  
     <a href ="#backlog"> Backlog </a>  •
+    <a href ="#burndown"> Burndown </a> •
     </h3>
   </div>
   
@@ -43,7 +44,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
 ## Cronograma
   
 <div>
-  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/CronogramaAPI2022-2.jpeg" width="500" height="600">  
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/CronogramaAPI2022-2.jpeg" width="500">  
 </div>
     
 <hr>
@@ -51,11 +52,19 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
 ## Backlog
 
 <div>
-  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Backlog.jpg" width="500" height="600">  
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/backlog.PNG"  height="600">  
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/divisao_de_sprints.PNG"  height="600">
 </div>
   
 <hr>  
 </div>
+
+## Burndown
+
+<div>
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Burndown.PNG"  height="600">
+</div>
+<hr>
 
 ## A Equipe
 <div>
@@ -71,7 +80,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
      <tr>
      <td> Thiago Canedo
        <td>
-         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/TCanedo.jpg" width="50px">
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Tcanedo.jfif" width="50px">
        </td>
        <td>Project Owner</td>
        <td><a href="https://github.com/ThiagoCanedo">Github</a></td>
@@ -100,7 +109,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
       </tr>
       <td> Vitor Morais
        <td>
-         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Vitor.jpg" width="50px">
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Vitor.jfif" width="50px">
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/vmorais111">Github</a>
@@ -109,14 +118,14 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
       </tr>
   <td> Leonardo Gazola
        <td>
-         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Leo.jpg" width="50px">
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Leo.jfif" width="50px">
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/Leonardo-Gazola-Medeiros">Github</a></td>
       </tr>
       <td> Luis S.Cardoso
        <td>
-         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/eu....jpg" width="50px">
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Luis.jfif" width="50px">
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/LuisSCardoso">Github</a>
@@ -125,7 +134,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
       </tr>
       <td> Flávio Borges
        <td>
-         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Flavio.jpg" width="50px">
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Flavio.jfif" width="50px">
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/Flavioborges86">Github</a></td>
