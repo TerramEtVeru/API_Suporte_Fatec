@@ -89,10 +89,12 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
       <tr>
      <td> Pedro Cardoso
        <td>
-         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Pedro.jpg" width="50px">
+         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Pedro.png" width="50px">
        </td>
        <td>Desenvolvedor</td>
-       <td><a href="https://github.com/phscz">Github</a></td>
+       <td><a href="https://github.com/phscz">Github</a>
+        <p> <a href="http://phsc.rf.gd>Website</a> </p>
+       </td>
       </tr>
       <td> Vitor Morais
        <td>
