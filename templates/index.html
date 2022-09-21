@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FATEC: Relatar Problemas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+    <div class="admbox"><span class="adm"><a href=" {{ url_for('admin') }} " class="admtxt">&nbsp;&nbsp;Administrador&nbsp;&nbsp;</a></span><br>
+    <center>
+        <a href="https://www.facebook.com/fatecjessenvidal" class="subdiv"><div class="mediaicon" style="background-image: url('https://cdn-icons-png.flaticon.com/512/3536/3536394.png')"></div></a>
+        <a href="https://www.linkedin.com/school/fatecjessenvidal" class="subdiv"><div class="mediaicon" style="background-image: url('https://cdn-icons-png.flaticon.com/512/3536/3536505.png')"></div></a>
+        <a href="https://www.instagram.com/fatecsaojosedoscampos/" class="subdiv"><div class="mediaicon" style="background-image: url('https://cdn-icons-png.flaticon.com/512/1409/1409946.png')"></div></a>
+        <a href="https://www.youtube.com/channel/UCRTd_ST0vPqXi4w_ZdfXtiw" class="subdiv"><div class="mediaicon" style="background-image: url('https://cdn-icons-png.flaticon.com/512/1384/1384060.png')"></div></a>
+    </center></div>
+    <div class="logobox"><a href="https://fatecsjc-prd.azurewebsites.net/">
+        <span class="fatec">Fatec</span><br>
+        <span class="sjc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            São José dos 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Campos</span><br>
+        <span class="prof">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Prof. Jessen Vidal</span>
+    </a></div>
+    <div class="botaobox">
+        <button class="botao" onclick="showBox();">Reporte seu problema</button>
+    </div>
+
+    <center>
+    <form id="formulario" name="formulario" method="POST" action=" {{ url_for('address') }} ">
+    <div class="reportbox" id="reportbox">
+        <div class="reporttext">
+            Sala:
+            <input type="text" id="sala" name="sala" class="reportinput">
+            Computador:
+            <input type="text" id="pc" name="pc" class="reportinput">
+            <span onclick="sendForm()" class="sendinput">Enviar</span>
+        </div>
+        <div class="reportmid"></div>
+        <textarea id="desc" name="desc" class="txtarea"></textarea>
+    </div>
+    </form>
+    </center>
+
+    <script>
+        function showBox() {
+            if (document.getElementById("reportbox").style.visibility == "visible"){
+                document.getElementById("reportbox").style.visibility = "hidden";
+            } else {
+                document.getElementById("reportbox").style.visibility = "visible";
+            }
+        }
+        function sendForm() {
+            document.getElementById('formulario').submit();
+        }
+		var msg = "{{ msg }}";
+		if (msg == "Enviado com sucesso") {
+			alert(msg);
+		} else if (msg == "ERRO: ENTRAR EM CONTATO COM OS DESENVOLVEDORES") {
+			alert(msg);
+		}
+    </script>
+
+</body>
+</html>
