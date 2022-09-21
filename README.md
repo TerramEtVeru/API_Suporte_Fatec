@@ -93,8 +93,8 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
        </td>
        <td>Desenvolvedor</td>
        <td>
-         <a href="https://github.com/phscz">Github</a>
-         <a href="http://phsc.rf.gd">Website</a>
+         <a href="https://github.com/phscz">Github</a><br>
+         <a href="http://phsc.rf.gd">Website</a><br>
          <a href="https://www.linkedin.com/in/pedro-cardoso-6b93011b6/">Linkedin</a>
        </td>
       </tr>
