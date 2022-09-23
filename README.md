@@ -69,7 +69,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
 ## A Equipe
 <div>
 <h2> Equipe de Desenvolvedores</h2>
-  <table align="left">
+  <table style="align: left">
     <thead>
       <th>Nome</th>
       <th>Foto</th>
@@ -139,4 +139,5 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/Flavioborges86">Github</a></td>
       </tr>
+      </table>
 </div>
