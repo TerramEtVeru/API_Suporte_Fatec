@@ -26,12 +26,11 @@ def index():
         print("-------------------------------------")
         print(request.form)
         print("-------------------------------------")
-        
-        
+          
         try:
             db.session.add(new_task)
             db.session.commit()
-            return redirect('/')
+            return render_template('index.html')
 
         except:
             return 'Deu ruim ai, tenta dnv'
