@@ -25,7 +25,9 @@
   <link href="../static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="../static/css/style.css" rel="stylesheet">
+  <link href="../static/style.css" rel="stylesheet">
+  <!-- CSS form login -->
+  <link href="../static/css/login-form.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: BizPage
@@ -52,7 +54,7 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="./home">Home</a></li>
-          <li><a href="#about">Admin</a></li>
+          <li><a href="#login" id="button-popup">Admin</a></li>
          <!--  <li><a href="#services">Services</a></li> -->
           <!-- <li><a href="#portfolio">Portfolio</a></li> -->
           <!-- <li><a href="#team">Team</a></li> -->
@@ -68,6 +70,25 @@
         </ul>-->
       </nav><!-- #nav-menu-container -->
     </div>
+
+    <div class="popup-login" id="popup">
+      <div class="conteudo-popup-login">
+          <img src="../static/img/fotos-login/cross.png" class="close-login">
+          <form action="formlogin.html" method="post">
+              <p class="login">Login</p>
+              <div>
+              <input class="login-usuario" type="text" name="" placeholder="Usuário" id="login-usuario">
+              </div>
+              <br>
+              <div>
+              <input class="login-senha" type="password" name="" placeholder="Senha" id="login-senha">
+              </div>
+              <br>
+              <input class='botao-enviar' name="" value="Enviar" type="button" onclick="validate()">
+          </form>
+      </div>
+    </div>
+
   </header><!-- #header -->
 
   <!--==========================
@@ -113,7 +134,10 @@
     function sendForm() {
         document.getElementById('formulario').submit();
     }
-</script>
+  </script>
+
+  <!-- Javascript Login-->
+  <script src="../static/js/login-form.js"></script>
 
   <script src="../static/lib/jquery/jquery.min.js"></script>
   <script src="../static/lib/jquery/jquery-migrate.min.js"></script>
