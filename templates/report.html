@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FATEC: Relatar Problemas</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="../static/img/favicon.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../static/style.css" rel="stylesheet">
+  <!-- CSS form login -->
+  <link href="../static/css/login-form.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="./home" class="scrollto">Lorem Report</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="./home">Home</a></li>
+          <li><a href="#login" id="button-popup">Admin</a></li>
+         <!--  <li><a href="#services">Services</a></li> -->
+          <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+          <!-- <li><a href="#team">Team</a></li> -->
+          <!-- <li class="menu-has-children"><a href="">Drop Down</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li> 
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>-->
+      </nav><!-- #nav-menu-container -->
+    </div>
+
+    <div class="popup-login" id="popup">
+      <div class="conteudo-popup-login">
+          <img src="../static/img/fotos-login/cross.png" class="close-login">
+          <form action="formlogin.html" method="post">
+              <p class="login">Login</p>
+              <div>
+              <input class="login-usuario" type="text" name="" placeholder="Usuário" id="login-usuario">
+              </div>
+              <br>
+              <div>
+              <input class="login-senha" type="password" name="" placeholder="Senha" id="login-senha">
+              </div>
+              <br>
+              <input class='botao-enviar' name="" value="Enviar" type="button" onclick="validate()">
+          </form>
+      </div>
+    </div>
+
+  </header><!-- #header -->
+
+  <!--==========================
+    CARROSSEL DE IMAGENS!!
+  ============================-->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <center>
+            <form id="formulario" name="formulario" method="post" action="http://127.0.0.1:5000">
+            <div class="reportbox" id="reportbox">
+                <div class="reporttext">
+                    <label for="sala">Sala:</label> 
+                    <input list="sala" name="Sala" placeholder="Selecione a sala" contenteditable="True" >
+                    <datalist id="sala">
+                        <option value="302">
+                        <option value="303">
+                        <option value="304">
+                        <option value="402">
+                        <option value="404">
+                    </datalist>
+                    <span onclick="sendForm()" class="sendinput">Enviar</span>
+                    <span onclick="sendForm()" class="sendinput">Enviar</span>
+                </div>
+                <div class="reportmid"></div>
+                <textarea id="descricao" name="descricao" class="txtarea"></textarea>
+            </div>
+            </form>
+        </center>
+
+      </div>
+    </div>
+
+  <!-- JavaScript Libraries -->
+  <script>
+
+    lastelement = null; cloneelement = null;
+	
+    salalist = []
+    salanomes = []
+    {% for row in rows %}
+      salalist.push((`{{row['elements']|safe}}`).trim());
+      salanomes.push("{{row['nome']|safe}}");
+    {% endfor %}
+    
+    //SISTEMA QUE DETERMINA O TAMANHO
+    function defineSelection(){
+      preelements = document.querySelector(".pctablemaster").innerHTML;
+      lastobj = preelements.lastIndexOf("obj");
+      if (lastobj != -1){
+        lastobj += 3;
+        if (preelements.substr(lastobj+1, 9) == '" class="'){
+          objsize = 1;
+        } else if (preelements.substr(lastobj+2, 9) == '" class="'){
+          objsize = 2;
+        } else if (preelements.substr(lastobj+3, 9) == '" class="'){
+          objsize = 3;
+        } else if (preelements.substr(lastobj+4, 9) == '" class="'){
+          objsize = 4;
+        } else {
+          objsize = 5;
+        }
+      
+        if (objsize <= 4) {
+          total = preelements.substr(lastobj, objsize)
+        } else {
+          total = 9999;
+        }
+      }
+      else total = 0;
+      
+      counter = 1; elements = [];
+      while (counter <= total){
+        if (preelements.includes("obj"+counter)){
+          elements.push("obj"+counter);
+        }
+        counter+=1;
+      }
+      for (x = 0; x < counter-1; x++){
+        document.getElementById(elements[x]).style.outline = "";
+        selectPC(document.getElementById(elements[x]));
+      }
+    }
+    
+    function selectPC(elmnt) {
+      elmnt.onmousedown = setSelectedElement;
+      
+      function setSelectedElement(){
+        if (elmnt.classList.value.includes("pc")){
+          if (lastelement != null) {
+            lastelement.style.outline = "";
+          }
+          elmnt.style.outline = "2px solid #DDDDDD";
+          lastelement = elmnt;
+          document.querySelector(".textpc").textContent = lastelement.textContent;
+        }
+      }
+    }
+    
+    function toggleVisibilidade(salanumber){
+      if (document.querySelector(".sala").style.visibility == "visible"){
+        document.querySelector(".sala").style.visibility = "hidden";
+      } else {
+        document.querySelector(".sala").style.visibility = "visible";
+      }
+      document.querySelector(".pctablemaster").innerHTML = salalist[salanomes.indexOf(salanumber.toString())];
+      defineSelection();
+    }
+
+    function showBox() {
+        if (document.getElementById("reportbox").style.visibility == "visible"){
+            document.getElementById("reportbox").style.visibility = "hidden";
+        } else {
+            document.getElementById("reportbox").style.visibility = "visible";
+        }
+    }
+    function sendForm() {
+        document.getElementById('formulario').submit();
+    }
+  </script>
+
+  <!-- Javascript Login-->
+  <script src="../static/js/login-form.js"></script>
+
+  <script src="../static/lib/jquery/jquery.min.js"></script>
+  <script src="../static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/lib/easing/easing.min.js"></script>
+  <script src="../static/lib/superfish/hoverIntent.js"></script>
+  <script src="../static/lib/superfish/superfish.min.js"></script>
+  <script src="../static/lib/wow/wow.min.js"></script>
+  <script src="../static/lib/waypoints/waypoints.min.js"></script>
+  <script src="../static/lib/counterup/counterup.min.js"></script>
+  <script src="../static/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="../static/lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="../static/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="../static/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="../static/contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="../static/js/main.js"></script>
+
+</body>
+</html>
