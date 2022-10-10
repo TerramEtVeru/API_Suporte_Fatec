@@ -104,6 +104,10 @@ def sala():
          msg = "Sala carregada com sucesso"
          return render_template("sala.html", rows = rows)
          con.close()
+         
+@app.route('/admin')
+def admin():
+   return render_template('admin.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

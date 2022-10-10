@@ -13,7 +13,7 @@ function validate(){
     var password=document.getElementById("login-senha").value;
     if(username=="admin"&& password=="password")
     {
-        return location.replace("https://www.w3schools.com");
+        return location.replace("./admin");
     }
     else
     {

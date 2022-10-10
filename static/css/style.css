@@ -1761,3 +1761,89 @@ body.mobile-nav-active #mobile-nav-toggle {
     visibility: hidden;
     
 }
+
+/*  pag chamado */
+
+.abachamados{
+  background-color: #252525;
+  
+  width: 1300px;
+  height: 550px;
+  flex-direction: column;
+  padding-top: 2px;
+  overflow-y: auto;  
+}
+/* barra de scroll */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #151515;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #454545; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555555; 
+}
+/* fim barra srcoll */
+
+
+.chamado{
+  background-color: #383030 ;
+  margin: 25px ;
+  border-top: 5px solid rgb(16, 17, 18);
+  border-bottom: 4px solid rgb(16, 17, 18);
+  text-decoration: none;
+
+  
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 5px;
+  outline: none;
+  
+
+
+}
+.primeiralinhainfo{
+  
+  display: flex;
+  height: 30px;
+  justify-content: space-around;
+  margin-left: 40px;
+  margin-right: 50px;
+
+}
+.segundalinhainfo{
+  flex-direction: row;
+  display: flex;
+  border-top: 1px solid lightslategray;
+  color: gold;
+  margin-left: 50px;
+  
+  
+}
+.terceiralinhainfo{
+  
+  flex-direction: row;
+  display: flex;
+  margin-left:50px ;
+  gap: 100px;
+  height: 50px;
+  
+}
+.numero-sala{
+  /* background-color: #13a456; */
+  width: 950px;
+  
+}
+.numero-Equipamento{
+  /* background-color: #aa0000; */
+  width: 2550px;
+}
+.data-de-abertura{
+  /* background-color: darkgreen; */
+  width: 3200px;
+}
