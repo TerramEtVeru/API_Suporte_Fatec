@@ -1,0 +1,100 @@
+    body {
+        overflow-x: hidden;
+        margin: 0; padding: 0; border: 0;
+        background-color: #FBFBFB;
+    }
+	
+	.headertop {
+		padding: 30px 0;
+		height: 92px;
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+	}
+	
+	.logotext {
+		font-size: 34px;
+		line-height: 1;
+		font-weight: 700;
+		letter-spacing: 3px;
+	}
+	.logoarea {
+		padding-left: 10px;
+		color: #ffffff;
+		border-left: 4px solid #ac3838;
+	}
+	
+	.mesa {
+		background-color: #F0F0F0;
+        position: absolute;
+        border: 1px solid #DDDDDD;
+        z-index: 2;
+        resize: none;
+        overflow: auto;
+		outline: none;
+	}
+
+    .pc {
+        font-family: "Monaco", monospace;
+        font-weight: 750;
+    	position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 3;
+        cursor: -webkit-pointer; cursor: pointer;
+        resize: none;
+        overflow: auto;
+		
+    }
+	.editarea {
+        margin-top: calc(47.5vh - 300px);
+        position: relative;
+        width: 1000px;
+        height: 600px;
+        background-color: #FFFFFF;
+        border: 1px solid #DDDDDD;
+        overflow: hidden;
+    }
+    .innertext {
+		font-size: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+	.textpc {
+		width: 1000px;
+		position: relative;
+		padding-top: 6px; padding-bottom: 6px;
+		margin: 0; border: 0; padding-left: 0; padding-right: 0;
+		height: auto;
+		font-size: 20px;
+		font-family: Courier New;
+        font-weight: 750;
+        background-color: #FFFFFF;
+		border: 1px solid #DDDDDD;
+	}
+	.sala {
+		left: calc(50vw - 500px);
+		position: fixed;
+		visibility: hidden;
+		z-index: 2;
+	}
+	.botao {
+		z-index: 1;
+		width: auto;
+		height: auto;
+		padding: 10px;
+		font-size: 30px;
+		font-family: Courier New;
+        font-weight: 750;
+		cursor: -webkit-pointer; cursor: pointer;
+	}
+	.close {
+		position: absolute;
+		font-size: 5vh;
+		font-family: Courier New;
+		right: 0;
+		top: 0;
+		z-index: 3;
+		cursor: -webkit-pointer; cursor: pointer;
+	}
