@@ -29,7 +29,7 @@
 	<div class="headertop">
 		<div class="logoarea">
 			<span class="logotext1">
-				FATEC 
+				<a href="https://fatecsjc-prd.azurewebsites.net">FATEC</a>
 			</span>
 			<span class="logotext2">
 				Reportar Problemas
@@ -43,7 +43,7 @@
 		
 	</div>
 		<form id="formulario" name="formulario" method="POST" action=" {{ url_for('send') }} ">
-		<div class="reportbox">
+		<div class="reportbox" style="visibility: hidden;">
 			<span class="generictext">SALA:
 				<span class="dropdown">
 					<input class="salatext" type="text" id="sala" name="sala">
@@ -61,9 +61,15 @@
 			<textarea id="descricao" name="descricao" class="txtarea"></textarea>
 		</div>
 		</form>
+		
+		<center>
+		<div class="botaoaparecer" onclick="toggleReport()">
+			<span class="generictitle">Reportar Problema</span>
+		</div>
+		</center>
 
 	<script>
-
+	report = 0;
     lastelement = null; cloneelement = null;
 	
     salalist = []
@@ -129,6 +135,7 @@
     }
     
     function toggleVisibilidade(salanumber){
+		defSala(document.getElementById("sala").value);
 		if (document.querySelector(".sala").style.visibility == "visible"){
 			document.querySelector(".sala").style.visibility = "hidden";
 		} else {
@@ -156,6 +163,24 @@
 		document.getElementById("computador").value = document.getElementById("selecionar").textContent;
         document.getElementById('formulario').submit();
     }
+	
+	var id = null;
+	function toggleReport() {
+		document.querySelector(".botaoaparecer").style.visibility = "hidden";
+		document.querySelector(".reportbox").style.visibility = "visible";
+		opacityvalue = 0;
+		document.querySelector(".reportbox").style.opacity = opacityvalue;
+		clearInterval(id);
+		id = setInterval(frame, 30);
+		function frame() {
+			if (opacityvalue >= 1) {
+				clearInterval(id);
+			} else {
+				opacityvalue+=0.1; 
+				document.querySelector(".reportbox").style.opacity = opacityvalue;
+			}
+		}
+	}
   </script>
 
 </body>
