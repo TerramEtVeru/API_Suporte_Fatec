@@ -171,6 +171,7 @@
 		font-size: 20px;
 		color: #ffffff;
 		height: calc(100vh - 300px);
+		z-index: 2;
 	}
 	
 	.txtarea {
@@ -265,5 +266,32 @@
 	.enviar:hover {
 		color: #ff0000;
 		cursor: pointer;
+	}
+	
+	.botaoaparecer {
+		background-color: #ff0000;
+		width: 500px;
+		border-radius: 50px;
+		margin-top: -500px; 
+		padding: 20px;
+		cursor: -webkit-pointer; cursor: pointer;
+		transition: background-color 0.5s;
+		z-index: 1;
+	}
+	.botaoaparecer:hover {
+		background-color: #aa0000;
+	}
+	.generictitle {
+		padding: 40px;
+		font-size: 35px;
+		line-height: 1;
+		font-weight: 700;
+		letter-spacing: 2px;
+		outline: none;
+		display: inline-block;
+		font-family: "Montserrat", sans-serif;
+		padding: 5px;
+		color: #ffffff;
+		user-select: none;
 	}
 	</style>
