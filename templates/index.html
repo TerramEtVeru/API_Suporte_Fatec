@@ -9,10 +9,25 @@
 	<style>
 	.pc {
 		background-image: url("{{ url_for('static', filename='pc.png') }}");
+
+	}
+	.fakebg {
+		background-image: url("{{ url_for('static', filename='case.jpg') }}");
+		background-size: cover;
+        background-repeat: no-repeat;
+		position: fixed; 
+		width: 100vw; height: 
+		100vh; 
+		top: 0; 
+		left: 0; 
+		z-index: -1;
+		opacity: 0;
 	}
 	body {
-		background-image: url(../static/img/3.jpg);
-	}
+		background-image: url("{{ url_for('static', filename='fatec.jpg') }}");
+		background-size: cover;
+        background-repeat: no-repeat;
+    }
 	</style>
 	
 </head>
@@ -68,6 +83,7 @@
 		</div>
 		</center>
 
+	<div class="fakebg">asd</div>
 	<script>
 	report = 0;
     lastelement = null; cloneelement = null;
@@ -126,7 +142,7 @@
           if (lastelement != null) {
             lastelement.style.outline = "";
           }
-          elmnt.style.outline = "2px solid #DDDDDD";
+          elmnt.style.outline = "2px solid #FF0000";
           lastelement = elmnt;
           document.getElementById("selecionar").textContent = lastelement.textContent;
 		  document.getElementById("computador").value = document.getElementById("selecionar").textContent;
@@ -168,16 +184,22 @@
 	function toggleReport() {
 		document.querySelector(".botaoaparecer").style.visibility = "hidden";
 		document.querySelector(".reportbox").style.visibility = "visible";
-		opacityvalue = 0;
+		opacityvalue = 0; opacityvalue2 = 0;
 		document.querySelector(".reportbox").style.opacity = opacityvalue;
 		clearInterval(id);
-		id = setInterval(frame, 30);
+		id = setInterval(frame, 5);
 		function frame() {
 			if (opacityvalue >= 1) {
-				clearInterval(id);
+				if (opacityvalue2 >= 1){
+					clearInterval(id);
+				} else {
+					opacityvalue2+=0.01;
+					document.querySelector(".reportbox").style.opacity = opacityvalue2;
+				}
 			} else {
-				opacityvalue+=0.1; 
-				document.querySelector(".reportbox").style.opacity = opacityvalue;
+				opacityvalue+=0.01; 
+				
+				document.querySelector(".fakebg").style.opacity = opacityvalue;
 			}
 		}
 	}

@@ -71,10 +71,11 @@
         user-select: none;
         color: #000000;
     }
-    .pcbutton:hover, .mesabutton:hover, .resize:hover, .delete:hover, .copy:hover, .clone:hover, .adicionar:hover, .carregar:hover, .salvar:hover, .deletar:hover, .admin:hover {
+    .pcbutton:hover, .mesabutton:hover, .resize:hover, .delete:hover, .copy:hover, .clone:hover, .adicionar:hover, .carregar:hover, .salvar:hover, .deletar:hover, .admin:hover, .edit:hover {
         color: #666666;
+		cursor: pointer;
     }
-    .pcbutton:active, .mesabutton:active, .resize:active, .delete:active, .copy:active, .clone:active, .adicionar:active, .carregar:active, .salvar:active, .deletar:active, .admin:active {
+    .pcbutton:active, .mesabutton:active, .resize:active, .delete:active, .copy:active, .clone:active, .adicionar:active, .carregar:active, .salvar:active, .deletar:active, .admin:active, .edit:active {
         color: #BBBBBB;
     }
     .txtx0, .txty0, .txtx1, .txty1 {

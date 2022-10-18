@@ -4,8 +4,7 @@
         margin: 0; padding: 0; border: 0;
         background-color: #000000;
 		
-		background-size: cover;
-        background-repeat: no-repeat;
+		z-index: -2;
     }
 	.headertop {
 		padding-left: 60px;
@@ -20,9 +19,9 @@
 	
 	
 	.mesa {
-		background-color: #F0F0F0;
+		background-color: #606060;
         position: absolute;
-        border: 1px solid #DDDDDD;
+        border: 1px solid #101010;
         z-index: 2;
         resize: none;
         overflow: auto;
@@ -42,12 +41,12 @@
 		
     }
 	.editarea {
-        margin-top: calc(47.5vh - 300px);
+        margin-top: calc(47.5vh - 250px);
         position: relative;
         width: 1000px;
         height: 600px;
-        background-color: #FFFFFF;
-        border: 1px solid #DDDDDD;
+        background-color: #161616;
+        border: 1px solid #FF0000;
         overflow: hidden;
     }
     .innertext {
@@ -62,7 +61,7 @@
 		margin: 0; border: 0; padding-left: 0; padding-right: 0;
 		height: auto;
 		font-size: 20px;
-		font-family: Courier New;
+		font-family:  "Montserrat", sans-serif;
         font-weight: 750;
         background-color: #FFFFFF;
 		border: 1px solid #DDDDDD;
@@ -80,19 +79,26 @@
 		height: auto;
 		padding: 10px;
 		font-size: 30px;
-		font-family: Courier New;
+		font-family: "Montserrat", sans-serif;
         font-weight: 750;
 		cursor: -webkit-pointer; cursor: pointer;
 	}
+	
 	.close {
 		position: absolute;
 		font-size: 5vh;
 		margin-right: 2vh;
-		font-family: Courier New;
+		font-family: "Montserrat", sans-serif;
 		right: 0;
 		top: 0;
 		z-index: 3;
 		cursor: -webkit-pointer; cursor: pointer;
+		color: #ffffff;
+		transition: color 0.5s;
+	}
+	.close:hover {
+		color: #ff0000;
+		cursor: pointer;
 	}
 	
 	
@@ -272,7 +278,7 @@
 		background-color: #ff0000;
 		width: 500px;
 		border-radius: 50px;
-		margin-top: -500px; 
+		margin-top: -50vh; 
 		padding: 20px;
 		cursor: -webkit-pointer; cursor: pointer;
 		transition: background-color 0.5s;
