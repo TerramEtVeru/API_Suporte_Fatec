@@ -27,6 +27,15 @@
 <hr>
 <h3> Desafio (problema) </h2>
 <p> Desenvolver um sistema web para controle de ordem de serviços (SOS) automatizar o processo de informação de equipamentos com mau funcionamento (Hardware e Software), onde haverá um mapa de localização (Layout) e uma legenda com possíveis defeitos. Os desenvolvedores deverão através da experiência adquirida sinalizar esses defeitos e sugerir ao cliente possibilidades visuais dessas indicações. Haverá a possibilidade de mudanças de layout, nomenclatura do computador, características do hardware e software e situações similares são funcionalidades que deverão ser contemplados no sistema. Bem como toda a documentação de desenvolvimento deverá ser lastreado no GitHub com todos os processos necessários para a fidelização do cliente. </p>
+</div>
+## Descrição
+<hr>
+<div align="center">
+<p>
+   <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube </a> 
+</p>    
+   <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Home_pag.png"  height="600">
+</div>
 <hr>
 <h3> Requisitos Funcionais: </h2>
 
@@ -62,7 +71,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
 ## Burndown
 
 <div>
-  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Burndown.PNG"  height="600">
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Burndown-Sprint2.png"  height="600">
 </div>
 <hr>
 
