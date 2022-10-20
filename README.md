@@ -34,7 +34,7 @@
 <p>
    <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube </a> 
 </p>    
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=werWdfGtkiU"></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/werWdfGtkiU"></iframe>
 </div>
 <hr>
 <h3> Requisitos Funcionais: </h2>
