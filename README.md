@@ -34,7 +34,8 @@
 <p>
   <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube 
   <br><img src="https://i.ytimg.com/vi/werWdfGtkiU/maxresdefault.jpg" width="50%">
-  </a> 
+  </a>
+  https://user-images.githubusercontent.com/11711235/197061596-dd7f4e24-7e13-47cb-8fba-99ed2fd7eaf5.mp4
 </p>
 </div>
 <hr>
@@ -62,8 +63,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
 ## Backlog
 
 <div>
-  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/backlog.PNG"  height="600">  
-  https://user-images.githubusercontent.com/11711235/197061596-dd7f4e24-7e13-47cb-8fba-99ed2fd7eaf5.mp4
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/backlog.PNG"  height="600">
 </div>
   
 <hr>  
