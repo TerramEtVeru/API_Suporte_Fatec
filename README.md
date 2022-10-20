@@ -34,10 +34,10 @@
 <p>
    <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube </a> 
 </p>    
-<iframe width="420" height="345" src="https://www.youtube.com/embed/werWdfGtkiU">
-</iframe>
 </div>
 <hr>
+<iframe width="420" height="345" src="https://www.youtube.com/embed/werWdfGtkiU">
+</iframe>
 <h3> Requisitos Funcionais: </h2>
 
 Linguagem Python (Requisito Fatec) 
