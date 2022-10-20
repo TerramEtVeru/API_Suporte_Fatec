@@ -32,9 +32,10 @@
 <hr>
 <div align="center">
 <p>
-  <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube </a> 
+  <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube 
+    <img src="https://i.ytimg.com/vi/werWdfGtkiU/maxresdefault.jpg" width="50%">
+  </a> 
 </p>
-  [<img src="https://i.ytimg.com/vi/werWdfGtkiU/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=werWdfGtkiU "Sprint 2: Rodando")
 </div>
 <hr>
 <h3> Requisitos Funcionais: </h2>
