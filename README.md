@@ -35,9 +35,6 @@
   <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube 
   <br><img src="https://i.ytimg.com/vi/werWdfGtkiU/maxresdefault.jpg" width="50%">
   </a>
-  <video width="320" height="240" controls>
-     <source src="https://user-images.githubusercontent.com/11711235/197065187-5f0696f9-fba5-4d4e-9585-8ddc90155bec.mp4" type="video/mp4">
-  </video>
 </p>
 </div>
 <hr>
