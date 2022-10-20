@@ -32,12 +32,11 @@
 <hr>
 <div align="center">
 <p>
-   <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube </a> 
-</p>    
+  <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube </a> 
+</p>
+  [![Sprint 2: Rodando](https://img.youtube.com/vi/werWdfGtkiU/0.jpg)](https://www.youtube.com/watch?v=werWdfGtkiU "Sprint 2: Rodando")
 </div>
 <hr>
-<iframe width="420" height="345" src="https://www.youtube.com/embed/werWdfGtkiU">
-</iframe>
 <h3> Requisitos Funcionais: </h2>
 
 Linguagem Python (Requisito Fatec) 
