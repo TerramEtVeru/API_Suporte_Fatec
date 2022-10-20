@@ -33,7 +33,7 @@
 <div align="center">
 <p>
   <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube 
-    <img src="https://i.ytimg.com/vi/werWdfGtkiU/maxresdefault.jpg" width="50%">
+  <br><img src="https://i.ytimg.com/vi/werWdfGtkiU/maxresdefault.jpg" width="50%">
   </a> 
 </p>
 </div>
