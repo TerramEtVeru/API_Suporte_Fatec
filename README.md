@@ -63,7 +63,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
 
 <div>
   <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/backlog.PNG"  height="600">  
-  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/divisao_de_sprints.PNG"  height="600">
+  https://user-images.githubusercontent.com/11711235/197061596-dd7f4e24-7e13-47cb-8fba-99ed2fd7eaf5.mp4
 </div>
   
 <hr>  
