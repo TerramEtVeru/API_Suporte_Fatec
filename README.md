@@ -34,7 +34,7 @@
 <p>
   <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube </a> 
 </p>
-  [![Sprint 2: Rodando](https://img.youtube.com/vi/werWdfGtkiU/0.jpg)](https://www.youtube.com/watch?v=werWdfGtkiU "Sprint 2: Rodando")
+  [<img src="https://i.ytimg.com/vi/werWdfGtkiU/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=werWdfGtkiU "Sprint 2: Rodando")
 </div>
 <hr>
 <h3> Requisitos Funcionais: </h2>
