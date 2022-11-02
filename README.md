@@ -67,6 +67,14 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
   
 <hr>  
 </div>
+## Backlog da sprint
+
+<div>
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Backlog da sprint.png"  height="600">
+</div>
+  
+<hr>  
+</div>
 
 ## Burndown
 
