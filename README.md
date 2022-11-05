@@ -101,8 +101,8 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
          <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Tcanedo.jfif" width="50px">
        </td>
        <td>Project Owner</td>
-       <td><a href="https://github.com/ThiagoCanedo">Github</a></td>
-       <p> <a href="https://www.linkedin.com/in/thiago-de-freitas-14273818b/">Linkedin</a> </p>
+       <td><a href="https://github.com/ThiagoCanedo">Github</a>
+       <p> <a href="https://www.linkedin.com/in/thiago-de-freitas-14273818b/">Linkedin</a> </p> </td>
       </tr>
       <tr>
      <td> Thiago Silva
@@ -148,7 +148,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/LuisSCardoso">Github</a>
-          <p> <a href="https://www.linkedin.com/in/lu%C3%ADs-ant%C3%B4nio-souza-cardoso-3928b51a0/">Linkedin</a> </p>
+          <p> <a href="https://www.linkedin.com/in/luis-antonio-souza-cardoso-3928b51a0/">Linkedin</a> </p>
         </td>
       </tr>
       <td> Flávio Borges
