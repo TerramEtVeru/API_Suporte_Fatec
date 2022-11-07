@@ -61,6 +61,7 @@
 							<th>PC</th>
 							<th>Sala</th>
 							<th>Problema</th>
+							<th>Descrição</th>
 						</tr>
 						{% for row in rows %}
 							<tr>
@@ -68,6 +69,7 @@
 								<td>{{row["data"]}}</td>
 								<td>{{row["pc"]}}</td>
 								<td>{{ row["sala"]}}</td>
+								<td>{{ row["problemas"]}}</td>
 								<td>{{row['desc']}}</td>	
 							</tr>
 						{% endfor %}

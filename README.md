@@ -32,9 +32,10 @@
 <hr>
 <div align="center">
 <p>
-   <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube </a> 
-</p>    
-   <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Home_pag.png"  height="600">
+  <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube 
+  <br><img src="https://i.ytimg.com/vi/werWdfGtkiU/maxresdefault.jpg" width="50%">
+  </a>
+</p>
 </div>
 <hr>
 <h3> Requisitos Funcionais: </h2>
@@ -61,8 +62,16 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
 ## Backlog
 
 <div>
-  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/backlog.PNG"  height="600">  
-  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/divisao_de_sprints.PNG"  height="600">
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/backlog.PNG"  height="600">
+</div>
+  
+<hr>  
+</div>
+
+## Backlog da sprint
+
+<div>
+  <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Backlog da sprint.png"  height="600">
 </div>
   
 <hr>  
@@ -92,7 +101,8 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
          <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Tcanedo.jfif" width="50px">
        </td>
        <td>Project Owner</td>
-       <td><a href="https://github.com/ThiagoCanedo">Github</a></td>
+       <td><a href="https://github.com/ThiagoCanedo">Github</a>
+       <p> <a href="https://www.linkedin.com/in/thiago-de-freitas-14273818b/">Linkedin</a> </p> </td>
       </tr>
       <tr>
      <td> Thiago Silva
@@ -138,7 +148,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/LuisSCardoso">Github</a>
-          <p> <a href="https://www.linkedin.com/in/lu%C3%ADs-ant%C3%B4nio-souza-cardoso-3928b51a0/">Linkedin</a> </p>
+          <p> <a href="https://www.linkedin.com/in/luis-antonio-souza-cardoso-3928b51a0/">Linkedin</a> </p>
         </td>
       </tr>
       <td> Flávio Borges
