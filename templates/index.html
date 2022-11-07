@@ -57,9 +57,8 @@
 		</div>
 		
 	</div>
-		<form id="formulario" name="formulario" method="POST" action=" {{ url_for('index') }} ">
+		<form id="formulario" name="formulario" method="POST" action=" {{ url_for('send') }} ">
 		<div class="reportbox" style="visibility: hidden;">
-			
 			<span class="generictext">SALA:
 				<span class="dropdown">
 					<input class="salatext" type="text" id="sala" name="sala">
@@ -70,27 +69,11 @@
 					</div>
 				</span>
 			</span>
-
-			<span class="generictext" >PROBLEMAS:
-                <span class="dropdown" >
-                    <input class="sugestoestext" type="text" id="sugestoes" name="sugestoes" >
-                    <div class="dropdown-content">
-                    {% for row in problems %}
-						<div class="dropdownlist"><span id="sugestoeslist" class="dropdowntextsugestoes" onclick="defProblema(`{{row['sugestoes']|safe}}`, `{{row['resolucoes']|safe}}`)">{{row['sugestoes']|safe}}</span></div>
-                    {% endfor %}
-                    </div>
-                </span>
-            </span>
 			
 			<span class="generictext">COMPUTADOR: <span id="selecionar" class="selectpc" onclick="toggleVisibilidade(document.getElementById('sala').value)">SELECIONAR</span></span>
 			<input type="hidden" id="computador" name="computador">
 			<span class="enviar" onclick="sendForm()">ENVIAR</span>
-			<p>Soluções de problema: </p>
-			<div class="solucoes-de-problemas" id="solucao">
-				Problemas
-			</div>
-		
-			<textarea id="descricao" name="descricao" class="txtarea">Descreva o problema</textarea>
+			<textarea id="descricao" name="descricao" class="txtarea"></textarea>
 		</div>
 		</form>
 		
@@ -107,18 +90,11 @@
 	
     salalist = []
     salanomes = []
-
     {% for row in rows %}
       salalist.push((`{{row['elements']|safe}}`).trim());
       salanomes.push("{{row['nome']|safe}}");
     {% endfor %}
-
-    sugestoeslist=[]
-
-	{% for row in problems %}
-      sugestoeslist.push((`{{row['sugestoes']|safe}}`).trim());
-    {% endfor %}
-
+    
     //SISTEMA QUE DETERMINA O TAMANHO
     function defineSelection(){
       preelements = document.querySelector(".pctablemaster").innerHTML;
@@ -192,12 +168,6 @@
 		document.getElementById("sala").value = value;
 	}
 
-	function defProblema(value,resolucao){
-		console.log(value);
-		document.getElementById("sugestoes").value = value;
-		document.getElementById("solucao").innerText = resolucao;
-	}
-
     function showBox() {
         if (document.getElementById("reportbox").style.visibility == "visible"){
             document.getElementById("reportbox").style.visibility = "hidden";
@@ -208,7 +178,6 @@
     function sendForm() {
 		document.getElementById("computador").value = document.getElementById("selecionar").textContent;
         document.getElementById('formulario').submit();
-		
     }
 	
 	var id = null;
