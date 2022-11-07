@@ -137,6 +137,10 @@
 		z-index: 100;
 	}
 
+	
+
+	
+
 	.dropdown:hover .dropdown-content {
 		display: block;
 	}
@@ -148,8 +152,15 @@
 	.dropdowntext {
 		padding-left: 10px;
 		transition: color 0.5s;
-		color: #ffffff;
+		color: #a10909;
 	}
+
+	.dropdowntextsugestoes {
+		padding-left: 10px;
+		transition: color 0.5s;
+		color: #16f63f;
+	}
+	
 	.dropdowntext:hover {
 		color: #ff0000;
 		cursor: pointer;
