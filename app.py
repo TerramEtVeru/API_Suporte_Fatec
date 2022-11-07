@@ -31,7 +31,7 @@ def index():
          rows = cur.fetchall()
 
          problemas_cur = con.cursor()
-         problemas_cur.execute("SELECT * FROM problemas")
+         #problemas_cur.execute("SELECT * FROM problemas")
          problems = problemas_cur.fetchall()
 
          # con.close()
