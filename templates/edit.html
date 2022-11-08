@@ -32,6 +32,7 @@
 <input type="hidden" id="selectedvalue" name="selectedvalue">
 <div class="editclass">
 	<span class="admin">admin</span><span class="edittxt">&nbsp;</span>
+	<span class="edittxt">&nbsp;&nbsp;&nbsp;id: </span><input class="txtid" type="text" id="txtid" name="txtid" disabled><span class="edittxt">&nbsp;</span>
     <input class="txtnew" type="text" id="txtnew" name="txtnew"><span class="edittxt"></span>
     <span class="adicionar">adicionar</span><span class="edittxt">&nbsp;</span>
     <select class="salalist" name="salalist" id="salalist">
@@ -49,13 +50,13 @@
 </div>
 <div class="editsize">
 	<span class="edittxt">&nbsp;x: </span><input class="txtx0" type="text" id="xpos" name="xpos"><span class="edittxt">&nbsp;largura: </span><input class="txtx1" type="text" id="xsize" name="xsize">
-    <span class="edittxt">&nbsp;name: </span><input class="txtname" type="text" id="txtname" name="txtname"><span class="edittxt">&nbsp;</span>
+    <span class="edittxt">&nbsp;&nbsp;name: </span><input class="txtname" type="text" id="txtname" name="txtname"><span class="edittxt">&nbsp;</span>
     <span class="pcbutton">novo PC&nbsp;&nbsp;</span><span class="edittxt">&nbsp;</span>
     <span class="edit">edit&nbsp;</span><span class="edittxt">&nbsp;</span>
     <span class="resize">redimensionar</span>
     <br>
     <span class="edittxt">&nbsp;y: </span><input class="txty0" type="text" id="ypos" name="ypos"><span class="edittxt">&nbsp;&nbsp;altura: </span><input class="txty1" type="text" id="ysize" name="ysize">
-    <span class="edittxt">&nbsp;&nbsp;&nbsp;id: </span><input class="txtid" type="text" id="txtid" name="txtid" disabled><span class="edittxt">&nbsp;</span>
+	<span class="edittxt">angulo: </span><input class="txtangle" type="text" id="txtangle" name="txtangle"><span class="edittxt">&nbsp;</span>
     <span class="mesabutton">nova mesa</span><span class="edittxt">&nbsp;</span>
     <span class="clone">clone</span><span class="edittxt">&nbsp;</span>
     <span class="delete">deletar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -128,6 +129,11 @@
             document.getElementById("ypos").value = elmnt.offsetTop;
             document.getElementById("txtid").value = elmnt.id;
             document.getElementById("txtname").value = elmnt.textContent;
+			
+			if (elmnt.style.transform == '') {
+				elmnt.style.transform = 'rotate(0deg)';
+			}
+			document.getElementById("txtangle").value = ((elmnt.style.transform).replace('rotate(','')).replace('deg)', '');
 
             if (elmnt.classList.value.includes("pc")) {
                 document.getElementById("ysize").disabled = true;
@@ -196,17 +202,21 @@
     document.querySelector('.txtname').addEventListener('input', function (event) {
         lastelement.innerHTML = '<div class="innertext">' + document.getElementById("txtname").value + '</div>';
     });
+	
+	document.querySelector('.txtangle').addEventListener('input', function (event) {
+		lastelement.style.transform = 'rotate(' + document.getElementById('txtangle').value + 'deg)';
+	});
 
 	//FUNCOES DOS ELEMENTOS
-    function addPC(yvalue, xvalue, ysize, xsize, texto) {
+    function addPC(yvalue, xvalue, ysize, xsize, texto, ang) {
         total++;
-        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="pc" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px;"><div class="innertext">' + texto + '</div></div>';
+        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="pc" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px; transform: ' + ang + ';"><div class="innertext">' + texto + '</div></div>';
         elements.push("obj" + total)
         elements.forEach(defineElement);
     }
-    function addMesa(yvalue, xvalue, ysize, xsize) {
+    function addMesa(yvalue, xvalue, ysize, xsize, ang) {
         total++;
-        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="mesa" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px;"></div>';
+        document.querySelector(".pctablemaster").innerHTML += '<div id="obj' + total + '" class="mesa" style="top: ' + yvalue + 'px; left: ' + xvalue + 'px; height: ' + ysize + 'px; width: ' + xsize + 'px; transform: ' + ang + ';"></div>';
         elements.push("obj" + total)
         elements.forEach(defineElement);  
     }
@@ -217,9 +227,9 @@
 
     function cloneObj(){
          if (lastelement.classList.value.includes("pc")) {
-            addPC(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth, lastelement.textContent);
+            addPC(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth, lastelement.textContent, lastelement.style.transform);
         } else if (lastelement.classList.value.includes("mesa")) {
-            addMesa(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth);
+            addMesa(lastelement.offsetTop, lastelement.offsetLeft, lastelement.clientHeight, lastelement.clientWidth, lastelement.style.transform);
         }
     }
     function pasteObj(){
@@ -227,10 +237,10 @@
         pastey = cursory - $('.editarea').offset().top - Math.round(cloneelement.clientHeight/2);
         //console.log(pastex + " " + pastey);
         if (cloneelement.classList.value.includes("pc")) {
-            addPC(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth, cloneelement.textContent);
+            addPC(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth, cloneelement.textContent, cloneelement.style.transform);
             cloneelement = document.getElementById("obj"+total);
         } else if (cloneelement.classList.value.includes("mesa")) {
-            addMesa(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth);
+            addMesa(pastey, pastex, cloneelement.clientHeight, cloneelement.clientWidth, cloneelement.style.transform);
             cloneelement = document.getElementById("obj"+total);
         }
     }
@@ -298,6 +308,7 @@
             lastelement.style.resize = "none";
         }
     });
+	
 	document.querySelector(".salalist").addEventListener("click", function (event) {
 		setSelected();
     });

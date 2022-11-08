@@ -47,7 +47,14 @@
 		
 	</div>
 	
+		
+	<form id="formulario" name="formulario" method="POST" action=" {{ url_for('update') }} ">
 		<div class="reportbox">
+			<div>
+				<span onclick="Resolver()" class="genericbutton">Arquivar</span>
+				<!--<span onclick="Rejeitar()" class="genericbutton">Rejeitar</span>
+				<span class="genericbutton" style="float: right;">Arquivados</span>-->
+			</div>
 			<center>
 				<table>
 					{% if rows|length == 0: %}
@@ -56,27 +63,43 @@
 						</tr>
 					{% else %}
 						<tr>
+							<th><p></p></th>
 							<th>ID</th>
 							<th>Data</th>
 							<th>PC</th>
 							<th>Sala</th>
+							<th>Classificação</th>
 							<th>Problema</th>
 							<th>Descrição</th>
 						</tr>
 						{% for row in rows %}
 							<tr>
-								<td>{{row['id']}}</td>
+								<td style="width: 20px; padding-bottom: 20px; padding-left: 15px;">
+								<label class="check">
+									<input type="radio" name="options" value="{{row['id']}}">
+									<span class="checkmark"></span>
+								</label>
+								</td>
+								<td>{{row["id"]}}</td>
 								<td>{{row["data"]}}</td>
 								<td>{{row["pc"]}}</td>
-								<td>{{ row["sala"]}}</td>
-								<td>{{ row["problemas"]}}</td>
-								<td>{{row['desc']}}</td>	
+								<td>{{row["sala"]}}</td>
+								<td>{{row["classificacao"]}}</td>
+								<td>{{row["problema"]}}</td>
+								<td>{{row["desc"]}}</td>	
 							</tr>
 						{% endfor %}
 					{% endif %}
-				</div>
+				</table>
 			</center>
+			
 		</div>
+	</form>
+		
+		
+		
+		
+		
 
 	<script>
 
@@ -167,6 +190,12 @@
             document.getElementById("reportbox").style.visibility = "visible";
         }
     }
+	
+	function Resolver(){
+		document.getElementById('formulario').submit();
+	}
+	function Rejeitar(){
+	}
 
   </script>
 

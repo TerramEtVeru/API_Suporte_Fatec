@@ -10,85 +10,83 @@ app = Flask(__name__)
 #conn.execute('CREATE TABLE salas (nome TEXT, elements TEXT, total INTEGER)')
 #conn.close()
 
-# conn = sql.connect('database.db')
-# conn.execute('DROP TABLE reports')
-# conn.execute('CREATE TABLE reports (id INTEGER PRIMARY KEY AUTOINCREMENT, data TEXT, sala TEXT, pc TEXT, problemas TEXT, desc TEXT)')
-# conn.close()
+#conn = sql.connect('database.db')
+#conn.execute('DROP TABLE problemas')
+#conn.execute('CREATE TABLE problemas (id INTEGER PRIMARY KEY AUTOINCREMENT, problema TEXT, sugestao TEXT)')
+#conn.close()
 
-# conn = sql.connect('database.db')
-# conn.execute('DROP TABLE problemas')
-# conn.execute('CREATE TABLE problemas (sugestoes TEXT, resolucoes TEXT)')
-# conn.close()
+#conn = sql.connect('database.db')
+#conn.execute('DROP TABLE reports')
+#conn.execute('CREATE TABLE reports (id INTEGER PRIMARY KEY AUTOINCREMENT, data TEXT, sala TEXT, pc TEXT, desc TEXT, problema TEXT, classificacao TEXT, arquivados TEXT)')
+#conn.close()
+
+
+#conn = sql.connect('database.db')
+#conn.execute('DROP TABLE arquivados')
+#conn.execute('CREATE TABLE arquivados (id INTEGER PRIMARY KEY AUTOINCREMENT, idoriginal INTEVER, data TEXT, sala TEXT, pc TEXT, desc TEXT, problema TEXT, classificacao TEXT, resolucao TEXT)')
+#conn.close()
 
 @app.route('/')
 @app.route('/index', methods = ['POST', 'GET'])
 def index():
    with sql.connect("database.db") as con:
          con.row_factory = sql.Row
-         
+
          cur = con.cursor()
          cur.execute("SELECT * FROM salas")
          rows = cur.fetchall()
-
-         problemas_cur = con.cursor()
-         #problemas_cur.execute("SELECT * FROM problemas")
-         problems = problemas_cur.fetchall()
-
-         # con.close()
-         if request.method == 'POST':
-            try:
-               sala = request.form['sala']
-               pc = request.form['computador']
-               problemas = request.form['sugestoes']
-               desc = request.form['descricao']
-               with sql.connect("database.db") as con:
-                  cur = con.cursor()
-                  cur.execute("INSERT INTO reports (data,pc,sala,desc,problemas) VALUES (datetime('now'),?,?,?,?)",(pc,sala,desc,problemas))
-                  con.commit()
-            except:
-               con.rollback()
-            finally:
-               return render_template("index.html", rows = rows, problems = problems)
-               con.close()
-
-         return render_template("index.html", rows = rows, problems = problems)
          
+         cur.execute("SELECT * FROM problemas")
+         problemas = cur.fetchall()
+
+         return render_template("index.html", rows = rows, problemas = problemas)
+         con.close()
 
 @app.route('/admin', methods = ['POST', 'GET'])
 def admin():
    with sql.connect("database.db") as con:
          con.row_factory = sql.Row
          cur = con.cursor()
-         cur.execute("SELECT * FROM reports")
+         cur.execute("SELECT * FROM reports WHERE NOT arquivados = ?",("sim",))
          rows = cur.fetchall()
          return render_template("admin.html", rows = rows)
          con.close()
 
-#@app.route("/problemas", methods = ['POST', 'GET'])
-#def problemas():
-#   if request.method == 'POST':
-#      with sql.connect("database.db") as con:
-#         cur.execute("INSERT INTO problemas VALUES")
+@app.route('/send', methods = ['POST', 'GET'])
+def send():
+   if request.method == 'POST':
+      try:
+         sala = request.form['sala']
+         pc = request.form['computador']
+         desc = request.form['descricao']
+         problema = request.form['problema']
+         classificacao = request.form['classificacao']
+         with sql.connect("database.db") as con:
+            cur = con.cursor()
+            cur.execute("INSERT INTO reports (data,pc,sala,desc,problema,classificacao,arquivados) VALUES (datetime('now'),?,?,?,?,?,?)",(pc,sala,desc,problema,classificacao,"false"))
+            con.commit()
+      except:
+         con.rollback()
+      finally:
+         return render_template("index.html")
+         con.close()
 
+@app.route('/update', methods = ['POST', 'GET'])
+def update():
+   option = request.form['options']
+   with sql.connect("database.db") as con:
+      cur = con.cursor()
+      cur.execute("UPDATE reports SET arquivados = ? WHERE id="+option,("sim",))
+      con.commit()
 
-# @app.route('/send', methods = ['POST', 'GET'])
-# def send():
-#    if request.method == 'POST':
-#       try:
-#          sala = request.form['sala']
-#          pc = request.form['computador']
-#          problemas = request.form['sugestoes']
-#          desc = request.form['descricao']
-#          with sql.connect("database.db") as con:
-#             cur = con.cursor()
-#             cur.execute("INSERT INTO reports (data,pc,sala,desc,problemas) VALUES (datetime('now'),?,?,?,?)",(pc,sala,desc,problemas))
-#             con.commit()
-#       except:
-#          con.rollback()
-#       finally:
-#          return render_template("index.html")
-#          con.close()
+      with sql.connect("database.db") as con:
+         con.row_factory = sql.Row
+         cur = con.cursor()
+         cur.execute("SELECT * FROM reports WHERE NOT arquivados = ?",("sim",))
+         rows = cur.fetchall()
 
+         return render_template("admin.html", rows = rows)
+         con.close()
 
 @app.route('/edit', methods = ['POST', 'GET'])
 def edit():
@@ -161,6 +159,16 @@ def edited():
          cur.execute("SELECT nome FROM salas")
          rows = cur.fetchall()
          return render_template("edit.html", rows = rows, selected = selected, msg = msg, elmnts = elmnts)
+         con.close()
+
+@app.route('/graficos', methods = ['POST', 'GET'])
+def graficos():
+   with sql.connect("database.db") as con:
+         con.row_factory = sql.Row
+         cur = con.cursor()
+         cur.execute("SELECT * FROM reports")
+         rows = cur.fetchall()
+         return render_template("graficos.html", rows = rows)
          con.close()
 
 if __name__ == '__main__':

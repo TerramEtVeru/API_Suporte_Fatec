@@ -180,21 +180,6 @@
 		height: calc(100vh - 300px);
 		z-index: 2;
 	}
-
-	.solucoes-de-problemas{
-		text-align: center;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		background-color: #202020;
-		border: 1px solid #303030;
-		font-family: "Montserrat", sans-serif;
-		font-size: 20px;
-		color: #ffffff;
-		line-height: 1;
-		font-weight: 500;
-		letter-spacing: 2px;
-
-	}
 	
 	.txtarea {
 		padding: 12px;
@@ -202,7 +187,7 @@
 		border: 1px solid #303030;
 		outline: none;
 		width: calc(100% - 24px);
-		height: calc(80% - 90px);
+		height: calc(90% - 90px);
 		resize: none;
 		font-family: "Montserrat", sans-serif;
 		font-size: 20px;
@@ -234,12 +219,11 @@
 		margin-bottom: 5px;
 		padding-left: 8px;
 		padding-right: 8px;
-		
 		background-color: #202020;
 		color: #ffffff;
 		border: 1px solid #303030;
 		outline: none;
-		width: 100%;
+		width: 150%;
 		height: 30px;
 		font-family: "Montserrat", sans-serif;
 		font-size: 20px;
@@ -261,7 +245,6 @@
 		width: 300px;
 		z-index: 100;
 	}
-
 	.dropdown:hover .dropdown-content {
 		display: block;
 	}
@@ -274,8 +257,6 @@
 		padding-left: 10px;
 		transition: color 0.5s;
 		color: #ffffff;
-		
-
 	}
 
 

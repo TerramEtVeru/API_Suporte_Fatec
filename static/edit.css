@@ -104,7 +104,7 @@
         background-color: #FFFFFF;
         border: 1px solid #000000;
     }
-    .txtname {
+    .txtname, .txtangle {
         width: 5vw;
         font-family: "Lucida Grande", monospace;
         font-size: 2vh;
