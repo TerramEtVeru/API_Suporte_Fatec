@@ -92,7 +92,8 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
          <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Tcanedo.jfif" width="50px">
        </td>
        <td>Project Owner</td>
-       <td><a href="https://github.com/ThiagoCanedo">Github</a></td>
+       <td><a href="https://github.com/ThiagoCanedo">Github</a>
+       <p> <a href="https://www.linkedin.com/in/thiago-de-freitas-14273818b/">Linkedin</a> </p></td>
       </tr>
       <tr>
      <td> Thiago Silva
