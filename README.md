@@ -32,7 +32,7 @@
 <hr>
 <div align="center">
 <p>
-   <a href="https://www.youtube.com/watch?v=werWdfGtkiU"> • Youtube </a> 
+   <a href="https://youtu.be/wi2l6Axu2Rk"> • Youtube </a> 
 </p>    
    <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Home_pag.png"  height="600">
 </div>
