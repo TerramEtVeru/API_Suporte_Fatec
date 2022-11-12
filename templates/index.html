@@ -12,6 +12,7 @@
 	</style>
 </head>
 <body>
+<<<<<<< Updated upstream
 <center>
 <div class="editarea">
 	<div class="pctablemaster">
@@ -23,6 +24,83 @@
 </center>
 
 <div class="editobj">
+=======
+	<div class="sala">
+		<div class="editarea">
+			<div class="pctablemaster">
+				
+			</div>
+			<div class="close" onclick="toggleVisibilidade()">x</div>
+		</div>
+	</div>
+	<div class="headertop">
+		<div class="logoarea">
+			<span class="logotext1">
+				<a href="https://fatecsjc-prd.azurewebsites.net">FATEC</a>
+			</span>
+			<span class="logotext2">
+				Reportar Problemas
+			</span>
+			<span class="buttontext">
+				<a href="./" class="activepage">HOME</a>
+				&nbsp;&nbsp;&nbsp;
+				<a href="./graficos">ADMIN</a>
+			</span>
+		</div>
+		
+	</div>
+		<form id="formulario" name="formulario" method="POST" action=" {{ url_for('send') }} ">
+		<input type="hidden" id="classificacao" name="classificacao">
+		<div class="reportbox" style="visibility: hidden;">
+			<span class="generictext">SALA:
+				<span class="dropdown">
+					<input class="salatext" type="text" id="sala" name="sala">
+					<div class="dropdown-content">
+					{% for row in rows %}
+						<div class="dropdownlist"><span id="salafield" class="dropdowntext" onclick="defSala({{row['nome']|safe}})">{{row['nome']|safe}}</span></div>
+					{% endfor %}
+					</div>
+				</span>
+			</span>
+			
+			<span class="generictext">COMPUTADOR: <span id="selecionar" class="selectpc" onclick="toggleVisibilidade(document.getElementById('sala').value)">SELECIONAR</span></span>
+			
+			<span class="generictext" >PROBLEMA:
+                <span class="dropdown" >
+                    <input class="sugestoestext" type="text" id="problema" name="problema">
+                    <div class="dropdown-content" style="width: 600px">
+                    {% for row in problemas %}
+						<div class="dropdownlist"><span id="problemafield" class="dropdowntext" onclick="defSolucao(`{{row['problema']|safe}}`, `{{row['sugestao']|safe}}`, `{{row['id']}}`)">{{row['problema']|safe}}</span></div>
+                    {% endfor %}
+                    </div>
+                </span>
+            </span>
+			
+			<input type="hidden" id="computador" name="computador">
+			<span class="enviar" onclick="sendForm()">ENVIAR</span>
+			<p id="sugestao">Possiveis soluções aparecerão aqui</p>
+			<textarea id="descricao" name="descricao" class="txtarea" placeholder="Descreva o problema"></textarea>
+		</div>
+		</form>
+		
+		<center>
+		<div class="botaoaparecer" onclick="toggleReport()">
+			<span class="generictitle">Reportar Problema</span>
+		</div>
+		</center>
+
+	<div class="fakebg">asd</div>
+	<script>
+	report = 0;
+    lastelement = null; cloneelement = null;
+	
+    salalist = []
+    salanomes = []
+    {% for row in rows %}
+      salalist.push((`{{row['elements']|safe}}`).trim());
+      salanomes.push("{{row['nome']|safe}}");
+    {% endfor %}
+>>>>>>> Stashed changes
     
 </div>
 <form onkeydown="return event.key != 'Enter';" id="form" name="form" method="POST" action=" {{ url_for('address') }} ">
