@@ -558,9 +558,13 @@
 
                   <table class="table table-borderless datatable">
                     <thead>
+                    {% if rows|length == 0: %}
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Solicitante</th>
+                        <th scope="col">Sem Notificações</th>
+                    {% else %}
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Data</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Status</th>

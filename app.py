@@ -192,13 +192,13 @@ def graficos():
             tbl_data.insert(i,t[2])
             tbl_occur.insert(i, t[4])
             tbl_tipo.insert(i, t[6])
-            
-         print(tbl_occur)
-         print(tbl_tipo)
          
          
+         #CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO OUTROS
+         cur.execute("SELECT * FROM reports")
+         rows = cur.fetchall()
          
-         return render_template("graficos.html", hardware = hardware, software = software, outro = outro, tbl_data = tbl_data, tbl_occur = tbl_occur, tbl_tipo = tbl_tipo)
+         return render_template("graficos.html", hardware = hardware, software = software, outro = outro, tbl_data = tbl_data, tbl_occur = tbl_occur, tbl_tipo = tbl_tipo, rows = rows)
          con.close()
 
 if __name__ == '__main__':
