@@ -555,74 +555,39 @@
 
                 <div class="card-body">
                   <h5 class="card-title">Reportes<span>|</span></h5>
-
-                  <thead>
-                      {% if rows|length == 0: %}
-                        <tr>
-                        <th scope="col">Sem Notificações</th>
-                      {% else %}
-                        <tr>
-                          <th scope="col">ID</th>
-                          <th scope="col">Data</th>
-                          <th scope="col">Descrição</th>
-                          <th scope="col">Categoria</th>
-                          <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-                      <tbody>
-                        {% for row in rows %}
+                  <table class="table table-borderless datatable">
+                    <thead>
+                        {% if rows|length == 0: %}
                           <tr>
-                            <th scope="row"><a href="#">{{row["id"]}}</a></th>
-                            <td>{{row["data"]}}</td>
-                            <td><a href="#" class="text-primary">{{row["desc"]}}</a></td>
-                            <td>{{row["classificacao"]}}</td>
-
-                            {{ if row["arquivados"] == "false"}}
-                            <td><span class="badge bg-warning">Pendente</span></td>
-                            {% else %}
-                            <td><span class="badge bg-success">Concluido</span></td>
-                            {% endif %}
+                          <th scope="col">Sem Notificações</th>
+                        {% else %}
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Status</th>
                           </tr>
-                      {% endfor %}
-                    {% endif %}
-                      </tbody>
-                  
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>Maria L.</td>
-                        <td><a href="#" class="text-primary">Mouse com problema.</a></td>
-                        <td>Hardware</td>
-                        <td><span class="badge bg-success">Concluido</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2</a></th>
-                        <td>Rafael S.</td>
-                        <td><a href="#" class="text-primary">Monitor desligado.</a></td>
-                        <td>Hardware</td>
-                        <td><span class="badge bg-warning">Pendente</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#3</a></th>
-                        <td>Viviane C.</td>
-                        <td><a href="#" class="text-primary">Falta software MY-SQL</a></td>
-                        <td>Software</td>
-                        <td><span class="badge bg-success">Concluido</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#4</a></th>
-                        <td>Vinicius T.</td>
-                        <td><a href="#" class="text-primar">Instalar C.S.</a></td>
-                        <td>Outros</td>
-                        <td><span class="badge bg-danger">Rejected</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#5</a></th>
-                        <td>Raniel D.</td>
-                        <td><a href="#" class="text-primary">Conector RJ45 quebrado.</a></td>
-                        <td>Hardware</td>
-                        <td><span class="badge bg-success">Finalizado</span></td>
-                      </tr>
-                    </tbody>
+                        {% endif %}
+                    </thead>
+                        <tbody>
+                        
+                          {% for tbl in rows: %}
+                            <tr>
+                              <th scope="row"><a href="#">{{tbl[0]}}</a></th>
+                              <td>{{tbl[1]}}</td>
+                              <td><a href="#" class="text-primary">{{tbl[4]}}</a></td>
+                              <td>{{tbl[6]}}</td>
+                              {% if tbl[7] == "false": %}
+                                <td><span class="badge bg-warning">Pendente</span></td>
+                              {% else: %}
+                                <td><span class="badge bg-success">Concluido</span></td>
+                              {% endif %}
+                            </tr>
+                          {% endfor %}
+                      
+                        </tbody>
+
                   </table>
 
                 </div>
