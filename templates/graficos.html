@@ -556,21 +556,37 @@
                 <div class="card-body">
                   <h5 class="card-title">Reportes<span>|</span></h5>
 
-                  <table class="table table-borderless datatable">
-                    <thead>
-                    {% if rows|length == 0: %}
-                      <tr>
+                  <thead>
+                      {% if rows|length == 0: %}
+                        <tr>
                         <th scope="col">Sem Notificações</th>
-                    {% else %}
-                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Status</th>
-                      </tr>
+                      {% else %}
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Data</th>
+                          <th scope="col">Descrição</th>
+                          <th scope="col">Categoria</th>
+                          <th scope="col">Status</th>
+                        </tr>
                     </thead>
-                    <tbody>
+                      <tbody>
+                        {% for row in rows %}
+                          <tr>
+                            <th scope="row"><a href="#">{{row["id"]}}</a></th>
+                            <td>{{row["data"]}}</td>
+                            <td><a href="#" class="text-primary">{{row["desc"]}}</a></td>
+                            <td>{{row["classificacao"]}}</td>
+
+                            {{ if row["status"] == "false"}}
+                            <td><span class="badge bg-warning">Pendente</span></td>
+                            {% else %}
+                            <td><span class="badge bg-success">Concluido</span></td>
+                            {% endif %}
+                          </tr>
+                      {% endfor %}
+                    {% endif %}
+                      </tbody>
+                  
                       <tr>
                         <th scope="row"><a href="#">#1</a></th>
                         <td>Maria L.</td>
