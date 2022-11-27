@@ -577,7 +577,7 @@
                             <td><a href="#" class="text-primary">{{row["desc"]}}</a></td>
                             <td>{{row["classificacao"]}}</td>
 
-                            {{ if row["status"] == "false"}}
+                            {{ if row["arquivados"] == "false"}}
                             <td><span class="badge bg-warning">Pendente</span></td>
                             {% else %}
                             <td><span class="badge bg-success">Concluido</span></td>
