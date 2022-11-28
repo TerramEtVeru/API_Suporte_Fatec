@@ -161,15 +161,44 @@ def edited():
          return render_template("edit.html", rows = rows, selected = selected, msg = msg, elmnts = elmnts)
          con.close()
 
-@app.route('/graficos', methods = ['POST', 'GET'])
+@app.route('/graficos', methods=['POST', 'GET'])
 def graficos():
    with sql.connect("database.db") as con:
-         con.row_factory = sql.Row
-         cur = con.cursor()
-         cur.execute("SELECT * FROM reports")
-         rows = cur.fetchall()
-         return render_template("graficos.html", rows = rows)
-         con.close()
+      tbl_data, tbl_occur, tbl_tipo = [], [], []
+      # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO HARDWARE
+      cur = con.cursor()
+      cur.execute("SELECT * FROM reports WHERE classificacao = 'Hardware'")
+      hardware = cur.fetchall()
+      hardware = len(hardware)
+
+      # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO SOFTWARE
+      cur.execute("SELECT * FROM reports WHERE classificacao = 'Software'")
+      software = cur.fetchall()
+      software = len(software)
+
+      # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO OUTROS
+      cur.execute("SELECT * FROM reports WHERE classificacao = 'Outro'")
+      outro = cur.fetchall()
+      outro = len(outro)
+
+      # CONSULTA LEITURA ORDENDADA PARA ALIMENTAÇÃO TABELA ULTIMOS REGISTROS
+      cur.execute(
+         "SELECT * FROM reports WHERE arquivados = 'false' ORDER BY ID DESC")
+      #rows = cur.fetchall()
+      tbl_list = cur.fetchall()
+
+      # TRATAMENTO PARA LISTAR FORMA INVERSA OS ITENS PARA ALIMENTAÇÃO DAS TABELAS
+      for i in range(len(tbl_list)):
+         t = (tbl_list[i])
+         tbl_data.insert(i, t[2])
+         tbl_occur.insert(i, t[4])
+         tbl_tipo.insert(i, t[6])
+
+      # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO OUTROS
+      cur.execute("SELECT * FROM reports")
+      rows = cur.fetchall()
+      return render_template("graficos.html", hardware=hardware, software=software, outro=outro, tbl_data=tbl_data, tbl_occur=tbl_occur, tbl_tipo=tbl_tipo, rows=rows)
+      con.close()
 
 if __name__ == '__main__':
     app.run(debug=True)

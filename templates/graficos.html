@@ -372,7 +372,7 @@
                       <i class="bi bi-motherboard"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>15</h6>
+                      <h6>{{ hardware }}</h6>
                       <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"> Chamados Abertos </span>
 
                     </div>
@@ -407,7 +407,7 @@
                       <i class="bi bi-pc-display-horizontal"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>23</h6> 
+                      <h6> {{ software }} </h6> 
                       <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"> Chamados Abertos </span>
 
                     </div>
@@ -443,7 +443,7 @@
                       <i class="bi bi-terminal"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>12</h6>
+                      <h6>{{ outro }}</h6>
                       <span class="text-danger small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"> Chamados Abertos </span>
 
                     </div>
@@ -555,54 +555,39 @@
 
                 <div class="card-body">
                   <h5 class="card-title">Reportes<span>|</span></h5>
-
                   <table class="table table-borderless datatable">
                     <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Solicitante</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Status</th>
-                      </tr>
+                        {% if rows|length == 0: %}
+                          <tr>
+                          <th scope="col">Sem Notificações</th>
+                        {% else %}
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        {% endif %}
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#1</a></th>
-                        <td>Maria L.</td>
-                        <td><a href="#" class="text-primary">Mouse com problema.</a></td>
-                        <td>Hardware</td>
-                        <td><span class="badge bg-success">Concluido</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2</a></th>
-                        <td>Rafael S.</td>
-                        <td><a href="#" class="text-primary">Monitor desligado.</a></td>
-                        <td>Hardware</td>
-                        <td><span class="badge bg-warning">Pendente</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#3</a></th>
-                        <td>Viviane C.</td>
-                        <td><a href="#" class="text-primary">Falta software MY-SQL</a></td>
-                        <td>Software</td>
-                        <td><span class="badge bg-success">Concluido</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#4</a></th>
-                        <td>Vinicius T.</td>
-                        <td><a href="#" class="text-primar">Instalar C.S.</a></td>
-                        <td>Outros</td>
-                        <td><span class="badge bg-danger">Rejected</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#5</a></th>
-                        <td>Raniel D.</td>
-                        <td><a href="#" class="text-primary">Conector RJ45 quebrado.</a></td>
-                        <td>Hardware</td>
-                        <td><span class="badge bg-success">Finalizado</span></td>
-                      </tr>
-                    </tbody>
+                        <tbody>
+                        
+                          {% for tbl in rows: %}
+                            <tr>
+                              <th scope="row"><a href="#">{{tbl[0]}}</a></th>
+                              <td>{{tbl[1]}}</td>
+                              <td><a href="#" class="text-primary">{{tbl[4]}}</a></td>
+                              <td>{{tbl[6]}}</td>
+                              {% if tbl[7] == "false": %}
+                                <td><span class="badge bg-warning">Pendente</span></td>
+                              {% else: %}
+                                <td><span class="badge bg-success">Concluido</span></td>
+                              {% endif %}
+                            </tr>
+                          {% endfor %}
+                      
+                        </tbody>
+
                   </table>
 
                 </div>
@@ -636,50 +621,50 @@
               <div class="activity">
 
                 <div class="activity-item d-flex">
-                  <div class="activite-label">32 min</div>
+                  <div class="activite-label"> {{tbl_data[0]}} </div>
                     <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
                   <div class="activity-content">
-                    Falha conexão <a href="#" class="fw-bold text-dark">HARDWARE</a>
+                    {{tbl_occur[0]}} <a href="#" class="fw-bold text-dark">{{tbl_tipo[0]}}</a>
                   </div>
                 </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
-                  <div class="activite-label">56 min</div>
+                  <div class="activite-label"> {{tbl_data[1]}} </div>
                     <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
                   <div class="activity-content">
-                    Mouse danificado <a href="#" class="fw-bold text-dark">HARDWARE</a>
+                    {{tbl_occur[1]}} <a href="#" class="fw-bold text-dark"> {{tbl_tipo[1]}} </a>
                   </div>
                 </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
-                  <div class="activite-label">2 hrs</div>
+                  <div class="activite-label"> {{tbl_data[3]}} </div>
                     <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
                   <div class="activity-content">
-                    Sofware não inicializa <a href="#" class="fw-bold text-dark">SOFTWARE</a>
+                    {{tbl_occur[2]}} <a href="#" class="fw-bold text-dark">{{tbl_tipo[2]}} </a>
                   </div>
                 </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
-                  <div class="activite-label">1 day</div>
+                  <div class="activite-label"> {{tbl_data[3]}} </div>
                     <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
                   <div class="activity-content">
-                    Instalação software edição videos <a href="#" class="fw-bold text-dark">OUTROS</a>
+                    {{tbl_occur[3]}} <a href="#" class="fw-bold text-dark">{{tbl_tipo[3]}} </a>
                   </div>
                 </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
-                  <div class="activite-label">2 days</div>
+                  <div class="activite-label">{{tbl_data[4]}}</div>
                   <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
                   <div class="activity-content">
-                    Computador não liga <a href="#" class="fw-bold text-dark">HARDWARE</a>
+                    {{tbl_occur[4]}} <a href="#" class="fw-bold text-dark">{{tbl_tipo[4]}} </a>
                   </div>
                 </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
-                  <div class="activite-label">4 weeks</div>
-                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
+                  <div class="activite-label">{{tbl_data[5]}}</div>
+                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
                   <div class="activity-content">
-                    Sofware auto cad ausente <a href="#" class="fw-bold text-dark">SOFTWARE</a>
+                    {{tbl_occur[5]}} <a href="#" class="fw-bold text-dark">{{tbl_tipo[5]}} </a>
                   </div>
                 </div><!-- End activity item-->
 
@@ -754,15 +739,15 @@
                         show: false
                       },
                       data: [{
-                          value: 1048,
+                          value: {{ hardware }},
                           name: 'Hardware'
                         },
                         {
-                          value: 735,
+                          value: {{ software }},
                           name: 'Software'
                         },
                         {
-                          value: 580,
+                          value: {{ outro }},
                           name: 'Outros'
                         },
                         
