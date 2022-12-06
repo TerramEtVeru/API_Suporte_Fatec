@@ -42,14 +42,24 @@ def index():
          return render_template("index.html", rows = rows, problemas = problemas)
          con.close()
 
-@app.route('/admin', methods = ['POST', 'GET'])
-def admin():
+@app.route('/reports', methods = ['POST', 'GET'])
+def reports():
    with sql.connect("database.db") as con:
          con.row_factory = sql.Row
          cur = con.cursor()
          cur.execute("SELECT * FROM reports WHERE NOT arquivados = ?",("sim",))
          rows = cur.fetchall()
-         return render_template("admin.html", rows = rows)
+         return render_template("reports.html", rows = rows)
+         con.close()
+   
+@app.route('/oldreports', methods = ['POST', 'GET'])
+def oldreports():
+   with sql.connect("database.db") as con:
+         con.row_factory = sql.Row
+         cur = con.cursor()
+         cur.execute("SELECT * FROM reports WHERE arquivados = ?",("sim",))
+         rows = cur.fetchall()
+         return render_template("oldreports.html", rows = rows)
          con.close()
 
 @app.route('/send', methods = ['POST', 'GET'])
@@ -85,7 +95,7 @@ def update():
          cur.execute("SELECT * FROM reports WHERE NOT arquivados = ?",("sim",))
          rows = cur.fetchall()
 
-         return render_template("admin.html", rows = rows)
+         return render_template("reports.html", rows = rows)
          con.close()
 
 @app.route('/edit', methods = ['POST', 'GET'])
@@ -167,15 +177,27 @@ def graficos():
       tbl_data, tbl_occur, tbl_tipo = [], [], []
       # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO HARDWARE
       cur = con.cursor()
+      cur.execute("SELECT * FROM reports WHERE classificacao = 'Hardware' AND NOT arquivados = 'sim'")
+      hardwareativo = cur.fetchall()
+      hardwareativo = len(hardwareativo)
+      # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO SOFTWARE
+      cur.execute("SELECT * FROM reports WHERE classificacao = 'Software' AND NOT arquivados = 'sim'")
+      softwareativo = cur.fetchall()
+      softwareativo = len(softwareativo)
+      # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO OUTROS
+      cur.execute("SELECT * FROM reports WHERE classificacao = 'Outro' AND NOT arquivados = 'sim'")
+      outrosativo = cur.fetchall()
+      outrosativo = len(outrosativo)
+
+      # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO HARDWARE
+      cur = con.cursor()
       cur.execute("SELECT * FROM reports WHERE classificacao = 'Hardware'")
       hardware = cur.fetchall()
       hardware = len(hardware)
-
       # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO SOFTWARE
       cur.execute("SELECT * FROM reports WHERE classificacao = 'Software'")
       software = cur.fetchall()
       software = len(software)
-
       # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO OUTROS
       cur.execute("SELECT * FROM reports WHERE classificacao = 'Outro'")
       outro = cur.fetchall()
@@ -187,6 +209,121 @@ def graficos():
       #rows = cur.fetchall()
       tbl_list = cur.fetchall()
 
+      # CONSULTA LEITURA DE CADA MES HARDWARE
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-01-%' AND classificacao = 'Hardware'")
+      mes1 = cur.fetchall()
+      mes1 = len(mes1)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-02-%' AND classificacao = 'Hardware'")
+      mes2 = cur.fetchall()
+      mes2 = len(mes2)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-03-%' AND classificacao = 'Hardware'")
+      mes3 = cur.fetchall()
+      mes3 = len(mes3)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-04-%' AND classificacao = 'Hardware'")
+      mes4 = cur.fetchall()
+      mes4 = len(mes4)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-05-%' AND classificacao = 'Hardware'")
+      mes5 = cur.fetchall()
+      mes5 = len(mes5)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-06-%' AND classificacao = 'Hardware'")
+      mes6 = cur.fetchall()
+      mes6 = len(mes6)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-07-%' AND classificacao = 'Hardware'")
+      mes7 = cur.fetchall()
+      mes7 = len(mes7)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-08-%' AND classificacao = 'Hardware'")
+      mes8 = cur.fetchall()
+      mes8 = len(mes8)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-09-%' AND classificacao = 'Hardware'")
+      mes9 = cur.fetchall()
+      mes9 = len(mes9)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-10-%' AND classificacao = 'Hardware'")
+      mes10 = cur.fetchall()
+      mes10 = len(mes10)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-11-%' AND classificacao = 'Hardware'")
+      mes11 = cur.fetchall()
+      mes11 = len(mes11)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-12-%' AND classificacao = 'Hardware'")
+      mes12 = cur.fetchall()
+      mes12 = len(mes12)
+      listahardware = [mes1, mes2, mes3, mes4, mes5, mes6, mes7, mes8, mes9, mes10, mes11, mes12]
+      # CONSULTA LEITURA DE CADA MES SOFTWARE
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-01-%' AND classificacao = 'Software'")
+      mes1 = cur.fetchall()
+      mes1 = len(mes1)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-02-%' AND classificacao = 'Software'")
+      mes2 = cur.fetchall()
+      mes2 = len(mes2)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-03-%' AND classificacao = 'Software'")
+      mes3 = cur.fetchall()
+      mes3 = len(mes3)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-04-%' AND classificacao = 'Software'")
+      mes4 = cur.fetchall()
+      mes4 = len(mes4)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-05-%' AND classificacao = 'Software'")
+      mes5 = cur.fetchall()
+      mes5 = len(mes5)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-06-%' AND classificacao = 'Software'")
+      mes6 = cur.fetchall()
+      mes6 = len(mes6)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-07-%' AND classificacao = 'Software'")
+      mes7 = cur.fetchall()
+      mes7 = len(mes7)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-08-%' AND classificacao = 'Software'")
+      mes8 = cur.fetchall()
+      mes8 = len(mes8)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-09-%' AND classificacao = 'Software'")
+      mes9 = cur.fetchall()
+      mes9 = len(mes9)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-10-%' AND classificacao = 'Software'")
+      mes10 = cur.fetchall()
+      mes10 = len(mes10)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-11-%' AND classificacao = 'Software'")
+      mes11 = cur.fetchall()
+      mes11 = len(mes11)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-12-%' AND classificacao = 'Software'")
+      mes12 = cur.fetchall()
+      mes12 = len(mes12)
+      listasoftware = [mes1, mes2, mes3, mes4, mes5, mes6, mes7, mes8, mes9, mes10, mes11, mes12]
+      # CONSULTA LEITURA DE CADA MES OUTROS
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-01-%' AND classificacao = 'Outro'")
+      mes1 = cur.fetchall()
+      mes1 = len(mes1)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-02-%' AND classificacao = 'Outro'")
+      mes2 = cur.fetchall()
+      mes2 = len(mes2)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-03-%' AND classificacao = 'Outro'")
+      mes3 = cur.fetchall()
+      mes3 = len(mes3)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-04-%' AND classificacao = 'Outro'")
+      mes4 = cur.fetchall()
+      mes4 = len(mes4)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-05-%' AND classificacao = 'Outro'")
+      mes5 = cur.fetchall()
+      mes5 = len(mes5)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-06-%' AND classificacao = 'Outro'")
+      mes6 = cur.fetchall()
+      mes6 = len(mes6)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-07-%' AND classificacao = 'Outro'")
+      mes7 = cur.fetchall()
+      mes7 = len(mes7)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-08-%' AND classificacao = 'Outro'")
+      mes8 = cur.fetchall()
+      mes8 = len(mes8)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-09-%' AND classificacao = 'Outro'")
+      mes9 = cur.fetchall()
+      mes9 = len(mes9)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-10-%' AND classificacao = 'Outro'")
+      mes10 = cur.fetchall()
+      mes10 = len(mes10)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-11-%' AND classificacao = 'Outro'")
+      mes11 = cur.fetchall()
+      mes11 = len(mes11)
+      cur.execute("SELECT * FROM reports WHERE data LIKE '%-12-%' AND classificacao = 'Outro'")
+      mes12 = cur.fetchall()
+      mes12 = len(mes12)
+      listaoutros = [mes1, mes2, mes3, mes4, mes5, mes6, mes7, mes8, mes9, mes10, mes11, mes12]
+
       # TRATAMENTO PARA LISTAR FORMA INVERSA OS ITENS PARA ALIMENTAÇÃO DAS TABELAS
       for i in range(len(tbl_list)):
          t = (tbl_list[i])
@@ -197,7 +334,7 @@ def graficos():
       # CONSULTA LEITURA QUANTIDADE OCORRÊNCIAS ENVOLVENDO OUTROS
       cur.execute("SELECT * FROM reports")
       rows = cur.fetchall()
-      return render_template("graficos.html", hardware=hardware, software=software, outro=outro, tbl_data=tbl_data, tbl_occur=tbl_occur, tbl_tipo=tbl_tipo, rows=rows)
+      return render_template("graficos.html", hardwareativo=hardwareativo, softwareativo=softwareativo, outrosativo=outrosativo, hardware=hardware, software=software, outro=outro, tbl_data=tbl_data, tbl_occur=tbl_occur, tbl_tipo=tbl_tipo, rows=rows, listahardware = listahardware, listasoftware = listasoftware, listaoutros = listaoutros)
       con.close()
 
 if __name__ == '__main__':
