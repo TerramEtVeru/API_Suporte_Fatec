@@ -288,7 +288,7 @@
 		display: inline-block;
 		font-family: "Montserrat", sans-serif;
 		padding: 5px;
-		color: #ffffff;
+		color: #999999;
 		transition: color 0.5s;
 	}
 	.enviar:hover {
