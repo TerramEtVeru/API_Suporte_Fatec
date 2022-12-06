@@ -12,7 +12,7 @@
 
 	}
 	.fakebg {
-		background-image: url("{{ url_for('static', filename='case.jpg') }}");
+		background-image: url("{{ url_for('static', filename='lab.jpg') }}");
 		background-size: cover;
         background-repeat: no-repeat;
 		position: fixed; 
@@ -52,7 +52,7 @@
 			<span class="buttontext">
 				<a href="./" class="activepage">HOME</a>
 				&nbsp;&nbsp;&nbsp;
-				<a href="./graficos">ADMIN</a>
+				<a onclick="logar()">ADMIN</a>
 			</span>
 		</div>
 		
@@ -97,7 +97,7 @@
 		</div>
 		</center>
 
-	<div class="fakebg">asd</div>
+	<div class="fakebg"></div>
 	<script>
 	report = 0;
     lastelement = null; cloneelement = null;
@@ -232,6 +232,15 @@
 				
 				document.querySelector(".fakebg").style.opacity = opacityvalue;
 			}
+		}
+	}
+	
+	function logar() {
+		senha = prompt("Digite a senha:", "admin");
+		if (senha == "admin") {
+			window.location.href = '../graficos';
+		} else {
+			window.alert("Senha errada");
 		}
 	}
   </script>
