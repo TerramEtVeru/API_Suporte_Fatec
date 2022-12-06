@@ -142,6 +142,5 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
           <p> <a href="https://www.linkedin.com/in/lu%C3%ADs-ant%C3%B4nio-souza-cardoso-3928b51a0/">Linkedin</a> </p>
         </td>
 
-      </tr>
-      </table>
+
 </div>
