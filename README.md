@@ -141,13 +141,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
        <td><a href="https://github.com/LuisSCardoso">Github</a>
           <p> <a href="https://www.linkedin.com/in/lu%C3%ADs-ant%C3%B4nio-souza-cardoso-3928b51a0/">Linkedin</a> </p>
         </td>
-      </tr>
-      <td> Flávio Borges
-       <td>
-         <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Flavio.jfif" width="50px">
-       </td>
-       <td>Desenvolvedor</td>
-       <td><a href="https://github.com/Flavioborges86">Github</a></td>
+
       </tr>
       </table>
 </div>
