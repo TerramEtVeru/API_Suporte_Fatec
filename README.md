@@ -128,6 +128,7 @@ O sistema web deverá ser intuitivo e não ter poluições de informações, iss
   <td> Leonardo Gazola
        <td>
          <img src="https://github.com/TerramEtVeru/API_Suporte_Fatec/blob/master/Imagens/Leo.jfif" width="50px">
+         <p> <a href="https://www.linkedin.com/in/leonardo-gazola-685a991b3/">Linkedin</a> </p>
        </td>
        <td>Desenvolvedor</td>
        <td><a href="https://github.com/Leonardo-Gazola-Medeiros">Github</a></td>
